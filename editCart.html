@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <title>购物车</title>
+<script>
+	$(function(){
+		var match,scale,TARGET_WIDTH = 320;
+		if (match = navigator.userAgent.match(/Android (\d+\.\d+)/)) {
+		scale = window.screen.width / TARGET_WIDTH;
+		if (parseFloat(match[1]) < 4.4) {
+			document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + TARGET_WIDTH + ',initial-scale = ' + scale + ', user-scalable=no');
+		} else {
+			document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + TARGET_WIDTH + ',initial-scale = ' + scale + ', target-densitydpi=device-dpi,user-scalable=no');
+			}
+		} else {
+			document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + TARGET_WIDTH+',user-scalable=no');
+		}
+		
+		document.addEventListener("touchstart", function(){}, true);
+		});
+</script>      
+</head>
+<body >
+<div class="w-320">
+    <div class="cartwrap">
+        <div class="cartpay"><i class="close"></i>
+            <div class="cart-brand clear">
+                <div class="cart-b-img fl"><img src="img/header.png"/></div>
+                <div class="cart-b-text fr">
+                    <p class="p0">阿迪达斯男鞋三叶草经典休闲鞋</p>
+                    <p class="price">
+                        <span>限时特价</span><em>￥</em><em>230</em>
+                        <i>剩余  9件</i>
+                    </p>
+                </div>
+            </div>
+            <div class="w-290">
+                <div class="cart-color">
+                    <p class="color-title">颜色</p>
+                    <ul class="clear">
+                        <li><a href="#" class="current">米色</a></li>
+                        <li><a href="#">米色</a></li>
+                        <li><a href="#">米色</a></li>
+                        <li><a href="#">米色</a></li>
+                        <li><a href="#">米色</a></li>
+                    </ul>
+                </div>
+                <div class="cart-color">
+                    <p class="color-title">尺码</p>
+                    <ul class="clear">
+                        <li><a href="#" class="current">女款 35 码</a></li>
+                        <li><a href="#">女款 35 码</a></li>
+                        <li><a href="#">女款 35 码</a></li>
+                        <li><a href="#">女款 35 码</a></li>
+                        <li><a href="#">女款 35 码</a></li>
+                        <li><a href="#">女款 35 码</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="xm-header" style="z-index: 99999;">
+        购物车(<span>20</span>)
+        <a href="cart.html"><div class="xm-backtext0 fr">完成</div></a>
+    </div>
+
+    <div class="xm-category" style="background: #fff;">
+        <h2>adidas 官方旗舰店</h2>
+        <div class="xm-category0 xm-add0">
+            <div class="xm-point"><i></i></div>
+            <div class="clear">
+                <div class="fl imgwrap0"><img src="img/p_01.png"/></div>
+                <div class="category-detail fr">
+                    <p>男款42码  米色 <i></i></p>
+                    <div class="amount">
+                        <input class="jian" type="button" value="-" style=""/>
+                        <input class="text_box" type="text" value="10" style=""/>
+                        <input class="jia_01" type="button" value="+" style=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xm-category0 xm-add0">
+            <div class="xm-point"><i></i></div>
+            <div class="clear">
+                <div class="fl imgwrap0"><img src="img/p_01.png"/></div>
+                <div class="category-detail fr">
+                    <p>男款42码  米色 <i></i></p>
+                    <div class="amount">
+                        <input class="jian" type="button" value="-" style=""/>
+                        <input class="text_box" type="text" value="10" style=""/>
+                        <input class="jia_01" type="button" value="+" style=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="cart-h2">失效商品</h2>
+    <div id="exp-goods">
+        <div class="xm-category0">
+            <div class="cart-label">失效</div>
+            <div class="clear">
+                <div class="fl imgwrap0"><img src="img/p_01.png"/></div>
+                <div class="xm-category0-text0 fl">
+                    <p class="p0">中国联通 电话充值卡面值30元</p>
+                    <p class="p1">男款42码  米色电话充值</p>
+                    <p class="p2">¥ 1928<em>¥ 1928</em> </p>
+                </div>
+                <div class="fr goods-amount">&#215;1</div>
+            </div>
+        </div>
+        <div class="xm-category0">
+            <div class="cart-label">失效</div>
+            <div class="clear">
+                <div class="fl imgwrap0"><img src="img/p_01.png"/></div>
+                <div class="xm-category0-text0 fl">
+                    <p class="p0">中国联通 电话充值卡面值30元</p>
+                    <p class="p1">男款42码  米色电话充值</p>
+                    <p class="p2">¥ 1928<em>¥ 1928</em> </p>
+                </div>
+                <div class="fr goods-amount">&#215;1</div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <div class="xm-point  xm-pointall"><i></i></div>
+        <div class="choose-num">已选(<span>4</span>)</div>
+        <a href="javascript:;" class="con-btn wish-list">移到心愿单</a>
+        <a href="javascript:;" class="con-btn accounts">删除</a>
+    </div>
+        <div class="xm-footer">
+        <a href="javascript:;" class="this"><i class="xm-icon icon_1" ></i><span></span>推荐</a>
+        <a href="javascript:;"><i class="xm-icon icon_2"></i><span>分类</span></a>
+        <a href="javascript:;"><i class="xm-icon icon_3" ></i><span>购物车</span></a>
+        <a href="javascript:;"><i class="xm-icon icon_4" ></i><span>我的</span></a>
+    </div>
+</div>
+</body>
+</html>

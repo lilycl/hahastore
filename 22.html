@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    <style>
+        body{font-family: "微软雅黑", Helvetica}
+        .xm-add0-r{font-size: 10px; margin-left: 10px; color:#9B9B9B; width:167px;
+           }
+        .xm-add0-r .p0{font-size:12px; color:#000;text-overflow: ellipsis; overflow: hidden; }
+        .xm-add0-r .p1{margin-top:3px; color: #4A4A4A; font-size:10px;text-overflow: ellipsis; overflow: hidden;}
+        .items{padding: 10px 10px; background: #fff; width: 300px; margin: 0 auto;}
+        .xm-add0-l{ text-align: center; margin-left:0px;}
+        .items .img{width: 55px; height: 55px; text-align: center; line-height:55px; margin-left:0px;}
+        .items img{max-height: 55px; max-width: 55px;    vertical-align: middle; }
+        .fl{float: left}
+        .fr{float: right}
+        .clear{zoom:1;}
+        .clear:after{content:"";display:block;clear:both;}
+        .items span{width:58px; height: 18px; border-radius: 2px; background: #fff; line-height: 18px; text-align: center;color: #000; border: 0.5px solid #E9E9E9; font-size: 8px;margin-top:40px;display: block; float: right}
+        .items span:active{background:#FAFAFA;}
+    </style>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        var JSONObject= {
+            "itemImage": "http://s.tiaohot.com/pic/itemImages/1.png"};
+        var LikeButton = React.createClass({
+            getInitialState:function(){
+                return {lenght:1}
+            },
+            render:function(){
+                var items = [];
+                for (var i = 0; i < 5; i++) {
+                    items.push(
+                    <div className="items clear">
+                        <div className="xm-add0-l fl"><img src={JSONObject.itemImage}/></div>
+                        <div className="xm-add0-r fl">
+                                <p className="p0">健身&肌肉训练</p>
+                                <p className="p1">日常进行时  工作生活两不耽误</p>
+                        <p className="p2">¥ 1928</p>
+                        </div>
+                        <span>评价</span>
+                    </div>);
+                }
+                return(
+                        <div>{items}</div>
+                );
+            }
+        });
+        ReactDOM.render(
+        <LikeButton />,
+                document.getElementById('example')
+        );
+    </script>
+</body>
+</html>

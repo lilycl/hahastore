@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MobileDemo</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+<div id="mountNode"></div>
+<script type="text/babel">
+    import { Progress, Button } from 'antd-mobile';
+
+    const MyProgress = React.createClass({
+        getInitialState() {
+            return {
+                percent: 50,
+            };
+        },
+        add() {
+            let p = this.state.percent + 10;
+            if (this.state.percent >= 100) {
+                p = 0;
+            }
+            this.setState({ percent: p });
+        },
+        render() {
+            const { percent } = this.state;
+            return (
+                    <div className="progress-container">
+                    <Progress percent={30} position="fixed" />
+                    <div style={{ height: 36 }} />
+        <Progress percent={40} position="normal" unfilled="hide" />
+                    <div className="show-info">
+                    <div className="progress"><Progress percent={percent} position="normal" /></div>
+                    <div>{percent}%</div>
+                    </div>
+                    <Button inline style={{ marginTop: 20 }} onClick={this.add}>(+-)10</Button>
+            </div>
+        );
+        },
+    });
+    ReactDOM.render(<MyProgress />, mountNode);
+</script>
+
+</body>
+</html>
